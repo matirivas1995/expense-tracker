@@ -26,10 +26,15 @@ const App = () => {
     },
   ];
 
+  const appExpenseHandler = expense => {
+    expenses.push(expense);
+    console.log(expense)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <NewExpense/>
+        <NewExpense onAddExpense={appExpenseHandler}/>
         <Expenses expenses={expenses}/>
       </header>
     </div>
